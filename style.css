@@ -67,7 +67,7 @@ h2::after {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 32px;
+  gap: 28px;
 }
 
 .nav-links a {
@@ -106,7 +106,15 @@ h2::after {
 .subtitle {
   font-size: 1.2rem;
   color: #666;
-  margin-bottom: 36px;
+  margin-bottom: 12px;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
 }
 
 .btn {
@@ -148,6 +156,82 @@ h2::after {
   font-size: 1.05rem;
 }
 
+/* 教育时间线 */
+.education {
+  padding: 100px 0;
+  background: #f8fafc;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #dde4ee;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -36px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: #2563eb;
+  border-radius: 50%;
+  border: 3px solid #e8efff;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 28px 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.timeline-content .degree {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.timeline-content p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 .about-stats {
   flex: 1;
   display: flex;
@@ -174,10 +258,19 @@ h2::after {
   color: #888;
 }
 
-/* 服务列表 */
+/* 经历与项目卡片 */
 .services {
   padding: 100px 0;
+  background: #fff;
+}
+
+.projects {
+  padding: 100px 0;
   background: #f8fafc;
+}
+
+.projects .services-grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .services-grid {
@@ -188,7 +281,7 @@ h2::after {
 
 .service-card {
   background: #fff;
-  padding: 40px 32px;
+  padding: 36px 28px;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -201,24 +294,78 @@ h2::after {
 
 .service-icon {
   font-size: 2rem;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .service-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.service-card .role {
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 600;
   margin-bottom: 12px;
 }
 
 .service-card p {
   color: #666;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   line-height: 1.7;
+}
+
+.exp-list {
+  list-style: none;
+  padding: 0;
+}
+
+.exp-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.exp-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: #2563eb;
+  border-radius: 50%;
+}
+
+/* 技能 */
+.skills-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.skill-tag {
+  padding: 10px 24px;
+  background: #eef2ff;
+  color: #2563eb;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 /* 联系方式 */
 .contact {
   padding: 100px 0;
-  background: #fff;
+  background: #f8fafc;
 }
 
 .contact-intro {
@@ -231,15 +378,16 @@ h2::after {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
 .contact-item {
   text-align: center;
   padding: 32px 20px;
-  background: #f8fafc;
+  background: #fff;
   border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
 }
 
 .contact-item h3 {
@@ -284,12 +432,16 @@ h2::after {
     grid-template-columns: 1fr;
   }
 
+  .projects .services-grid {
+    grid-template-columns: 1fr;
+  }
+
   .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .nav-links {
-    gap: 16px;
+    gap: 14px;
   }
 }
 
@@ -300,10 +452,6 @@ h2::after {
 
   .about-stats {
     flex-direction: column;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
   }
 
   .nav-links {
